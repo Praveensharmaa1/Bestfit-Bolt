@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 const Home = () => {
   return (
     <div className="font-inter">
-      {/* HERO SECTION */}
       <section className="bg-gradient-to-br from-blue-50 to-white py-20 text-center">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800">
@@ -19,7 +18,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FEATURES SECTION */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-semibold text-gray-800 mb-10">Why Choose BestFit-Bolt?</h2>
@@ -47,7 +45,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* TEMPLATES PREVIEW */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-semibold text-center text-gray-800 mb-10">Popular Resume Templates</h2>
@@ -68,7 +65,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FOOTER */}
       <footer className="bg-gray-800 text-white py-6 text-center">
         <p className="text-sm">&copy; {new Date().getFullYear()} BestFit-Bolt. All rights reserved.</p>
       </footer>

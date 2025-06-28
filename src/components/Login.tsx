@@ -13,7 +13,6 @@ const firebaseConfig = {
   apiKey: "YOUR_FIREBASE_API_KEY",
   authDomain: "YOUR_FIREBASE_AUTH_DOMAIN",
   projectId: "YOUR_FIREBASE_PROJECT_ID",
-  // ... other config from Firebase console
 };
 
 const app = initializeApp(firebaseConfig);

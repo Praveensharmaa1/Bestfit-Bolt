@@ -1,64 +1,76 @@
-import React from 'react';
+import { Button } from "@/components/ui/button";
 
 const Home = () => {
   return (
-    <div className="font-inter bg-white text-gray-900">
-      {/* Navbar */}
-      <header className="flex items-center justify-between px-8 py-5 shadow-sm">
-        <h1 className="text-2xl font-bold text-blue-600">BestFit-Bolt</h1>
-        <nav>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition">
-            Login
-          </button>
-        </nav>
-      </header>
-
-      {/* Hero Section */}
-      <section className="text-center py-20 px-4 bg-gradient-to-br from-blue-100 to-white">
-        <h2 className="text-4xl font-extrabold leading-tight mb-4">
-          Build Your AI-Optimized Resume in Minutes
-        </h2>
-        <p className="text-lg mb-8 text-gray-600">
-          Powered by smart suggestions, templates, and one-click customization.
-        </p>
-        <button className="bg-blue-600 text-white px-6 py-3 rounded-xl text-lg hover:bg-blue-700 transition">
-          Create Resume Now
-        </button>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-16 px-6 max-w-5xl mx-auto">
-        <h3 className="text-2xl font-bold text-center mb-10">Why Choose BestFit-Bolt?</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { title: '15+ Modern Templates', desc: 'Designed by HR experts, categorized by profession.' },
-            { title: 'AI-Powered Suggestions', desc: 'Improve your writing with grammar + tone fixes.' },
-            { title: 'One-Click Export', desc: 'Download resumes as polished PDFs anytime.' },
-          ].map((feature, idx) => (
-            <div key={idx} className="border p-6 rounded-xl shadow hover:shadow-md transition">
-              <h4 className="text-xl font-semibold mb-2">{feature.title}</h4>
-              <p className="text-gray-600">{feature.desc}</p>
-            </div>
-          ))}
+    <div className="font-inter">
+      {/* HERO SECTION */}
+      <section className="bg-gradient-to-br from-blue-50 to-white py-20 text-center">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800">
+            Build Your AI-Optimized Resume in Minutes
+          </h1>
+          <p className="mt-4 text-lg text-gray-600">
+            Create stunning, recruiter-approved resumes with BestFit-Bolt.
+          </p>
+          <div className="mt-8 flex justify-center gap-4">
+            <Button className="px-6 py-3 text-base">Get Started</Button>
+            <Button variant="outline" className="px-6 py-3 text-base">Browse Templates</Button>
+          </div>
         </div>
       </section>
 
-      {/* Template Preview */}
-      <section className="bg-gray-100 py-16 px-6">
-        <h3 className="text-2xl font-bold text-center mb-10">Preview Our Templates</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {[1, 2, 3].map((id) => (
-            <div key={id} className="bg-white rounded-xl shadow p-4 hover:shadow-md transition">
-              <div className="h-48 bg-gray-200 rounded mb-3"></div>
-              <p className="text-center font-medium text-gray-700">Template {id}</p>
-            </div>
-          ))}
+      {/* FEATURES SECTION */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-semibold text-gray-800 mb-10">Why Choose BestFit-Bolt?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "AI Content Suggestions",
+                desc: "Instantly improve your resume with intelligent content tips and grammar checks.",
+              },
+              {
+                title: "Beautiful Templates",
+                desc: "Choose from 15+ modern, industry-specific templates.",
+              },
+              {
+                title: "Multiple Versions",
+                desc: "Save different resume versions for different job roles.",
+              },
+            ].map((feature, idx) => (
+              <div key={idx} className="border rounded-2xl p-6 shadow hover:shadow-md transition">
+                <h3 className="text-xl font-bold text-blue-600 mb-2">{feature.title}</h3>
+                <p className="text-gray-600">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="text-center py-6 border-t text-sm text-gray-500">
-        © 2025 BestFit-Bolt. All rights reserved.
+      {/* TEMPLATES PREVIEW */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-semibold text-center text-gray-800 mb-10">Popular Resume Templates</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {[1, 2, 3].map((temp) => (
+              <div key={temp} className="border rounded-xl overflow-hidden shadow hover:shadow-lg transition bg-white">
+                <img
+                  src={`https://via.placeholder.com/600x800?text=Template+${temp}`}
+                  alt={`Resume Template ${temp}`}
+                  className="w-full"
+                />
+                <div className="p-4 text-center">
+                  <p className="font-medium text-gray-700">Template {temp}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-gray-800 text-white py-6 text-center">
+        <p className="text-sm">&copy; {new Date().getFullYear()} BestFit-Bolt. All rights reserved.</p>
       </footer>
     </div>
   );

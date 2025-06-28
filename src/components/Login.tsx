@@ -10,9 +10,13 @@ import {
 } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "YOUR_FIREBASE_API_KEY",
-  authDomain: "YOUR_FIREBASE_AUTH_DOMAIN",
-  projectId: "YOUR_FIREBASE_PROJECT_ID",
+  apiKey: "AIzaSyBspzBgtDlNO0lIFcF21L1RmRQ_XZjyy0g",
+  authDomain: "bestfithr-a3158.firebaseapp.com",
+  projectId: "bestfithr-a3158",
+  storageBucket: "bestfithr-a3158.firebasestorage.app",
+  messagingSenderId: "837744246818",
+  appId: "1:837744246818:web:17739758d7bb08764bca7b",
+  measurementId: "G-DGJNG34ZZY",
 };
 
 const app = initializeApp(firebaseConfig);

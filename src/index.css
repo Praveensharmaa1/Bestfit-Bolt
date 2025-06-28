@@ -1,1 +1,6 @@
+/* Basic styles or Tailwind import can go here */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
 

@@ -2,47 +2,34 @@ import React from "react";
 import { Button } from "../components/ui/button";
 import Login from "../components/Login";
 
-const templates = [
-  {
-    id: 1,
-    name: "Modern Professional",
-    img: "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=600&q=80",
-  },
-  {
-    id: 2,
-    name: "Creative Designer",
-    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80",
-  },
-  {
-    id: 3,
-    name: "Classic Corporate",
-    img: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80",
-  },
-];
-
 const Home = () => {
   return (
-    <div className="font-inter min-h-screen flex flex-col">
-      {/* Login Button at top right */}
-      <section className="bg-gradient-to-br from-blue-50 to-white py-6 px-6 flex justify-end max-w-6xl mx-auto w-full">
+    <div className="font-inter text-gray-800 bg-white">
+      {/* Header */}
+      <header className="flex justify-between items-center px-6 py-4 shadow">
+        <h1 className="text-2xl font-bold text-blue-600">BestFit-Bolt</h1>
         <Login />
-      </section>
+      </header>
 
-      <section className="bg-gradient-to-br from-blue-50 to-white py-20 text-center">
-        <div className="container mx-auto px-6 max-w-5xl">
-          <h1 className="text-5xl font-extrabold text-gray-900 leading-tight">
-            Build Your <span className="text-blue-600">AI-Optimized Resume</span> in Minutes
-          </h1>
-          <p className="mt-6 text-lg text-gray-700 max-w-3xl mx-auto">
-            Create stunning, recruiter-approved resumes with BestFit-Bolt’s AI-powered tools.
+      {/* Hero Section */}
+      <section
+        className="relative h-[90vh] bg-cover bg-center flex items-center justify-center text-center text-white"
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1531497865144-0464ef8fbf03?auto=format&fit=crop&w=1350&q=80')`,
+        }}
+      >
+        <div className="bg-black bg-opacity-60 p-10 rounded-xl max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
+            Build a Stunning Resume in Minutes
+          </h2>
+          <p className="text-lg md:text-xl mb-6">
+            AI-powered. Professionally designed. Instantly downloadable.
           </p>
-          <div className="mt-10 flex justify-center gap-6">
-            <Button className="px-8 py-4 text-lg shadow-lg hover:shadow-xl">
-              Get Started
-            </Button>
+          <div className="flex justify-center gap-4 flex-wrap">
+            <Button className="px-6 py-3 text-lg shadow">Get Started</Button>
             <Button
               variant="outline"
-              className="px-8 py-4 text-lg hover:bg-blue-100"
+              className="px-6 py-3 text-lg bg-white text-blue-600 hover:bg-blue-100"
             >
               Browse Templates
             </Button>
@@ -50,63 +37,62 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 max-w-6xl text-center">
-          <h2 className="text-4xl font-semibold text-gray-900 mb-12">
-            Why Choose BestFit-Bolt?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      {/* Features Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <h3 className="text-3xl font-bold text-center mb-12">
+            Why BestFit-Bolt?
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "AI Content Suggestions",
-                desc:
-                  "Instantly improve your resume with intelligent content tips and grammar checks.",
                 icon: "🤖",
+                title: "AI Content Assistance",
+                desc: "Get smart suggestions, grammar corrections, and personalized prompts.",
               },
               {
-                title: "Beautiful Templates",
-                desc:
-                  "Choose from 15+ modern, industry-specific templates designed by experts.",
                 icon: "🎨",
+                title: "Modern Templates",
+                desc: "Choose from 15+ sleek, ATS-friendly resume layouts.",
               },
               {
-                title: "Multiple Versions",
-                desc:
-                  "Save different resume versions tailored for specific job roles and industries.",
-                icon: "💾",
+                icon: "🧾",
+                title: "Save Versions",
+                desc: "Tailor your resume for multiple roles and keep versions organized.",
               },
-            ].map(({ title, desc, icon }, idx) => (
+            ].map(({ icon, title, desc }, i) => (
               <div
-                key={idx}
-                className="border rounded-3xl p-8 shadow-md hover:shadow-lg transition"
+                key={i}
+                className="bg-white rounded-xl shadow p-6 text-center hover:shadow-lg transition"
               >
                 <div className="text-5xl mb-4">{icon}</div>
-                <h3 className="text-2xl font-bold text-blue-700 mb-2">{title}</h3>
-                <p className="text-gray-700">{desc}</p>
+                <h4 className="text-xl font-bold mb-2">{title}</h4>
+                <p className="text-gray-600">{desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50 flex-grow">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <h2 className="text-4xl font-semibold text-center text-gray-900 mb-12">
-            Popular Resume Templates
-          </h2>
+      {/* Templates Section */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <h3 className="text-3xl font-bold text-center mb-12">
+            Explore Our Top Resume Templates
+          </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {templates.map(({ id, name, img }) => (
+            {[1, 2, 3].map((id) => (
               <div
                 key={id}
-                className="rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-2xl transition cursor-pointer"
+                className="bg-white rounded-xl overflow-hidden shadow hover:shadow-xl transition"
               >
                 <img
-                  src={img}
-                  alt={name}
-                  className="w-full h-96 object-cover"
+                  src={`https://images.unsplash.com/photo-1581091012184-7a5c9bd91f5c?auto=format&fit=crop&w=600&q=80&sig=${id}`}
+                  alt={`Resume Template ${id}`}
+                  className="w-full h-80 object-cover"
                 />
                 <div className="p-4 text-center">
-                  <p className="text-xl font-semibold text-gray-800">{name}</p>
+                  <h4 className="text-lg font-semibold">Template {id}</h4>
                 </div>
               </div>
             ))}
@@ -114,10 +100,9 @@ const Home = () => {
         </div>
       </section>
 
-      <footer className="bg-gray-900 text-white py-6 text-center">
-        <p className="text-sm select-none">
-          &copy; {new Date().getFullYear()} BestFit-Bolt. All rights reserved.
-        </p>
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white text-center py-6">
+        <p>&copy; {new Date().getFullYear()} BestFit-Bolt. All rights reserved.</p>
       </footer>
     </div>
   );
